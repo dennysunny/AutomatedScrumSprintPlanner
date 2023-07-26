@@ -1,0 +1,9 @@
+
+<mat-grid-list cols="8" rowHeight="4:6"  >
+    <mat-grid-tile 
+    layout-padding
+    *ngFor="let story of storyList"
+    [colspan]="story.storyPoint>4 ? 4 : story.storyPoint" 
+    [style.background] = "story.color? story.color : defaultColor">Story: {{story.storyName}} <br>  Point: {{story.storyPoint}} 
+</mat-grid-tile>
+</mat-grid-list>

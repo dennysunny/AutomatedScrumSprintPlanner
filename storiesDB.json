@@ -1,0 +1,57 @@
+{
+  "stories": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "storyName": "sssd",
+      "storyPoint": 5,
+      "color": "#3d5281",
+      "id": 2
+    },
+    {
+      "storyName": "test story",
+      "storyPoint": 6,
+      "color": "#9d0281",
+      "id": 3
+    },
+    {
+      "storyName": "user stoet",
+      "storyPoint": 2,
+      "color": "#e982f9",
+      "id": 4
+    },
+    {
+      "storyName": "user stoet",
+      "storyPoint": 2,
+      "color": "#b51ca2",
+      "id": 5
+    },
+    {
+      "storyName": "another user siry",
+      "storyPoint": 3,
+      "color": "#5d2ee1",
+      "id": 6
+    },
+    {
+      "storyName": "another user siry",
+      "storyPoint": 3,
+      "color": "#f5d6b1",
+      "id": 7
+    },
+    {
+      "storyName": "another one",
+      "storyPoint": 1,
+      "color": "#c729cf",
+      "id": 8
+    },
+    {
+      "storyName": "another onss",
+      "storyPoint": 5,
+      "color": "#2698ef",
+      "id": 9
+    }
+  ]
+}
