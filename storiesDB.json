@@ -1,9 +1,10 @@
 {
   "stories": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "storyName": "sssd",
+      "storyPoint": 1,
+      "color": "#6e0081",
+      "id": 1
     },
     {
       "storyName": "sssd",
@@ -82,6 +83,90 @@
       "storyPoint": 4,
       "color": "#8672fa",
       "id": 14
+    },
+    {
+      "storyName": "sssd",
+      "storyPoint": 1,
+      "color": "#d8e0f9",
+      "id": 15
+    },
+    {
+      "storyName": "sssd",
+      "storyPoint": 2,
+      "color": "#ec250d",
+      "id": 16
+    },
+    {
+      "storyName": "sssd",
+      "storyPoint": 1,
+      "color": "#3d4c00",
+      "id": 17
+    },
+    {
+      "storyName": "sssd",
+      "storyPoint": 1,
+      "color": "#cad625",
+      "id": 18
+    },
+    {
+      "storyName": "sssd",
+      "storyPoint": 1,
+      "color": "#2dcdbd",
+      "id": 19
+    },
+    {
+      "storyName": "sssd",
+      "storyPoint": 11,
+      "color": "#53e263",
+      "id": 20
+    },
+    {
+      "storyName": "sssd",
+      "storyPoint": 1,
+      "color": "#67a4ae",
+      "id": 21
+    },
+    {
+      "storyName": "sssd",
+      "storyPoint": 1,
+      "color": "#c7da56",
+      "id": 22
+    },
+    {
+      "storyName": "sssd",
+      "storyPoint": 1,
+      "color": "#63d830",
+      "id": 23
+    },
+    {
+      "storyName": "sssd",
+      "storyPoint": 1,
+      "color": "#d6159b",
+      "id": 24
+    },
+    {
+      "storyName": "sssd",
+      "storyPoint": 1,
+      "color": "#e6138c",
+      "id": 25
+    },
+    {
+      "storyName": "sssd",
+      "storyPoint": 1,
+      "color": "#1049d0",
+      "id": 26
+    },
+    {
+      "storyName": "sssd",
+      "storyPoint": 1,
+      "color": "#c4e3a5",
+      "id": 27
+    },
+    {
+      "storyName": "sssd",
+      "storyPoint": 1,
+      "color": "#41861f",
+      "id": 28
     }
   ]
 }
