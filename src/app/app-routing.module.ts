@@ -5,14 +5,15 @@ import { StoryListComponent } from './userStories/story-list/story-list.componen
 import { SprintCalculatorComponent } from './sprint/sprint-calculator/sprint-calculator.component';
 import { AutoGenerateSprintComponent } from './sprint/auto-generate-sprint/auto-generate-sprint.component';
 import { StoryHomeComponent } from './userStories/story-home/story-home.component';
+import { SprintHomeComponent } from './sprint/sprint-home/sprint-home.component';
 
 
 const routes: Routes = [
   {path : '', pathMatch : 'full', redirectTo : '/add-story'},
   {path : 'add-story', component : StoryHomeComponent },
   {path : 'story-list', component : StoryHomeComponent},
-  {path : 'sprint-calculator', component : SprintCalculatorComponent},
-  {path : 'generated-sprint', component : AutoGenerateSprintComponent}
+  {path : 'sprint-calculator', component : SprintHomeComponent},
+  {path : 'generated-sprint', component : SprintHomeComponent}
 ];
 
 @NgModule({

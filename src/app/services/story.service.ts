@@ -13,7 +13,7 @@ export class StoryService {
 
   getAllStories() :Observable<any> {
     return this.http.get('/stories').pipe(
-      tap((res)=> console.log(JSON.stringify(res))
+      tap((res)=> console.log("Get Stories",JSON.stringify(res))
       )
     )
   }

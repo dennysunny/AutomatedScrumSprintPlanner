@@ -1,5 +1,5 @@
 
-<mat-grid-list cols="8" rowHeight="4:6"  >
+<mat-grid-list cols="8" rowHeight="4:6" *ngIf="storyList?.length>0; else emptyStoryScreen" >
     <mat-grid-tile 
     layout-padding
     *ngFor="let story of storyList"
@@ -7,3 +7,12 @@
     [style.background] = "story.color? story.color : defaultColor">Story: {{story.storyName}} <br>  Point: {{story.storyPoint}} 
 </mat-grid-tile>
 </mat-grid-list>
+
+<ng-template #emptyStoryScreen >
+    
+    <mat-grid-list cols="1" rowHeight="100%">
+        <mat-grid-tile layout-padding [colspan]="1" [style.background]="'#fa8072 '">
+            {{emptyStories}}
+        </mat-grid-tile>
+    </mat-grid-list>
+</ng-template>

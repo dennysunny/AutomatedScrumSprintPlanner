@@ -10,6 +10,7 @@ export class StoryListComponent implements OnInit{
 
   storyList! :any;
   defaultColor = "#ebebeb"
+  emptyStories! :string;
 
   constructor(
     private storyService :StoryService
@@ -17,7 +18,11 @@ export class StoryListComponent implements OnInit{
 
   ngOnInit(): void {
       this.storyService.getAllStories().subscribe({
-        next : (res) => this.storyList = res ? res : [],
+        next : (res) => {
+          if(res.length == 0 ){
+            this.emptyStories = "No Stories Created"
+          } else this.storyList = res;
+        },
         error : (err) => console.log("Error",err)
         
       })

@@ -52,6 +52,12 @@
       "storyPoint": 5,
       "color": "#2698ef",
       "id": 9
+    },
+    {
+      "storyName": "test story",
+      "storyPoint": 3,
+      "color": "#bb1738",
+      "id": 10
     }
   ]
 }

@@ -6,8 +6,8 @@
                 </mat-card-header>
 
                 <mat-card-content >
-                    <form [formGroup]="addStoryForm" (ngSubmit)="addStory()" >
-                        <mat-form-field class="example-full-width">
+                    <form [formGroup]="addStoryForm" class="add-story-form" (ngSubmit)="addStory()" >
+                        <mat-form-field class="add-story-form-full-width ">
                             <mat-label>Story Name</mat-label>
                             <input matInput formControlName="storyName">
                             <div *ngIf=" addStoryForm.controls['storyName'].touched  && addStoryForm.get('storyName')?.errors" class="alert alert-danger">
@@ -19,17 +19,18 @@
                             </div>
                         </mat-form-field >
 
-                        <mat-form-field class="example-full-width">
+                        <mat-form-field class="add-story-form-full-width ">
                             <mat-label>Story Point</mat-label>
                             <input matInput type="number" formControlName="storyPoint">
 
                         </mat-form-field>
                         <section>
-                            <div class="example-button-row">
+                            <div class="submit-button-row">
                                 <button type="submit" mat-raised-button color="primary">Add Story</button>
                             </div>
                         </section>
                     </form>
                 </mat-card-content>
             </mat-card>
- 
+
+            
