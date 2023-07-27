@@ -58,6 +58,30 @@
       "storyPoint": 3,
       "color": "#bb1738",
       "id": 10
+    },
+    {
+      "storyName": "abc story",
+      "storyPoint": 8,
+      "color": "#c8ec1d",
+      "id": 11
+    },
+    {
+      "storyName": "abc story",
+      "storyPoint": 8,
+      "color": "#f7cd34",
+      "id": 12
+    },
+    {
+      "storyName": "def story",
+      "storyPoint": 5,
+      "color": "#b32243",
+      "id": 13
+    },
+    {
+      "storyName": "fre story",
+      "storyPoint": 4,
+      "color": "#8672fa",
+      "id": 14
     }
   ]
 }

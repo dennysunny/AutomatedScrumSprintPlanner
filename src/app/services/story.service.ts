@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, tap } from 'rxjs';
+import { Observable, map, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +23,26 @@ export class StoryService {
     story.color = "#" + ((1 << 24) * Math.random() | 0).toString(16);
     return this.http.post("/stories",story, {headers : options}).pipe(
       tap((res)=> console.log("Added Story", JSON.stringify(res)))
+    )
+  }
+
+  getStoriesBySprintPoint(sprintPoint: any) :Observable<any> {
+    return this.getAllStories().pipe(
+      map((stories) => {
+      const storyList = stories.filter((story: any) => story.storyPoint <= sprintPoint)
+      console.log("listt",storyList);
+      let count = 0;
+      storyList.forEach((story :any) => {
+        if(count<=sprintPoint){
+          count+=story.storyPoint
+        }
+      }
+      )
+      console.log("Count",count);
+      
+       return storyList
+      }
+      )
     )
   }
 

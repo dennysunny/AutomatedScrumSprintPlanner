@@ -23,7 +23,7 @@ export class AddStoryComponent implements OnInit{
     ngOnInit(): void {
         this.addStoryForm = this.formBuilder.group({
           storyName : ['', {updateOn : 'change', validators : [Validators.required, Validators.minLength(4) ,this.storyDuplicateCheck]}],
-          storyPoint : ['', {updateOn : 'change', validators : [Validators.required, Validators.maxLength(2)]}]
+          storyPoint : ['', {updateOn : 'change', validators : [Validators.required, Validators.minLength(1), Validators.maxLength(2)]}]
         })
     }
 

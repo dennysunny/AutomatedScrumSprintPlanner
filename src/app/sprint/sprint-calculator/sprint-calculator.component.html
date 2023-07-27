@@ -1,1 +1,41 @@
-<p>sprint-calculator works!</p>
+<mat-card>
+  <mat-card-header class="text-danger">
+    <h1 class="font-weight-bold">Sprint Calculator</h1>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="sprintCalculatorForm" (ngSubmit)="loadStories()">
+      <mat-form-field>
+        <mat-label>Sprint Point</mat-label>
+        <input matInput type="number" formControlName="sprintPoint" />
+        <div *ngIf=" sprintCalculatorForm.controls['sprintPoint'].touched  && sprintCalculatorForm.get('sprintPoint')?.errors"
+          class="alert alert-danger">
+          <p>Story Point should be in the range of 1 to 99</p>
+        </div>
+      </mat-form-field>
+      <section>
+        <div class="submit-button-row">
+          <button type="submit" mat-raised-button color="primary">
+            Auto Generate Stories
+          </button>
+        </div>
+      </section>
+
+      <section>
+        <div class="submit-button-row">
+          <button type="button" mat-raised-button color="primary">
+            Clear All Stories
+          </button>
+        </div>
+        <div class="submit-button-row">
+          <button type="button" mat-raised-button color="primary">
+            Clear Selected Stories
+          </button>
+        </div>
+      </section>
+
+
+    </form>
+
+
+  </mat-card-content>
+</mat-card>

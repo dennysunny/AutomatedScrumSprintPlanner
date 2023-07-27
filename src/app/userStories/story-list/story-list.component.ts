@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DoCheck, Input, OnInit } from '@angular/core';
 import { StoryService } from 'src/app/services/story.service';
 
 @Component({
@@ -6,9 +6,8 @@ import { StoryService } from 'src/app/services/story.service';
   templateUrl: './story-list.component.html',
   styleUrls: ['./story-list.component.css']
 })
-export class StoryListComponent implements OnInit{
+export class StoryListComponent{
 
-  storyList! :any;
   defaultColor = "#ebebeb"
   emptyStories! :string;
 
@@ -16,18 +15,7 @@ export class StoryListComponent implements OnInit{
     private storyService :StoryService
   ){}
 
-  ngOnInit(): void {
-      this.storyService.getAllStories().subscribe({
-        next : (res) => {
-          if(res.length == 0 ){
-            this.emptyStories = "No Stories Created"
-          } else this.storyList = res;
-        },
-        error : (err) => console.log("Error",err)
-        
-      })
-      
-  }
+  @Input() stories! :any;
 
   
 

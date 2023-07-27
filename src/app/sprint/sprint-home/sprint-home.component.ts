@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-sprint-home',
@@ -6,5 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./sprint-home.component.css']
 })
 export class SprintHomeComponent {
+
+  sprintPoint!: any
+
+  constructor() { }
+
+  getSprintPoint(sprintPoint: Number) {
+    this.sprintPoint = sprintPoint
+  }
+
+  
+  
+
 
 }
