@@ -7,17 +7,16 @@ import { AutoGenerateSprintComponent } from './sprint/auto-generate-sprint/auto-
 import { StoryHomeComponent } from './userStories/story-home/story-home.component';
 import { SprintHomeComponent } from './sprint/sprint-home/sprint-home.component';
 
-
 const routes: Routes = [
-  {path : '', pathMatch : 'full', redirectTo : '/add-story'},
-  {path : 'add-story', component : StoryHomeComponent },
-  {path : 'story-list', component : StoryHomeComponent},
-  {path : 'sprint-calculator', component : SprintHomeComponent},
-  {path : 'generated-sprint', component : SprintHomeComponent}
+  { path: '', pathMatch: 'full', redirectTo: '/add-story' },
+  { path: 'add-story', component: StoryHomeComponent },
+  { path: 'story-list', component: StoryHomeComponent },
+  { path: 'sprint-calculator', component: SprintHomeComponent },
+  { path: 'generated-sprint', component: SprintHomeComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
