@@ -40,33 +40,30 @@ export class AddStoryComponent implements OnInit{
       
       this.storyService.checkDuplicateStories(this.addStoryForm.value.storyName).subscribe({
         next: (res) => {
-         if(res){ 
-          if(res.storyName != '' || res.storyName !== null){
-            sessionStorage.setItem('storyName', res.storyName)
-            console.log("story name from res", res.storyName);
-            
-          }}
+         
+          if(res && res.storyName != '' && res.storyName !== null){
+            this.toastr.warning('Story Already Exists', res.storyName)
+          }
+          else{
+            this.storyService.addStory(this.addStoryForm.value).subscribe({
+              next: (res) => {
+                this.toastr.success("Story Name: " + res.storyName!, "Story Added"),
+                  this.addStoryNotifyEvent.emit(res)
+                this.addStoryForm.controls['storyName'].patchValue('')
+                this.addStoryForm.controls['storyPoint'].patchValue('')
+                this.addStoryForm.controls['storyName'].setErrors(null);
+                this.addStoryForm.controls['storyPoint'].setErrors(null);
+
+              },
+              error: (err) => this.toastr.warning("Error", err)
+            })
+          }
+        
         },
         error: (err) => this.toastr.warning("Error", err)
 
       })
-      //add story to db, only if storyName is new
-      if (sessionStorage.getItem('storyName') != this.addStoryForm.value.storyName){
-        console.log("story exisists", sessionStorage.getItem('storyName'));
         
-        this.storyService.addStory(this.addStoryForm.value).subscribe({
-          next: (res) => {
-            this.toastr.success("Story Name: " +res.storyName! , "Story Added"),
-            this.addStoryNotifyEvent.emit(res)
-          },
-          error: (err) => this.toastr.warning("Error", err)
-        })
-
-        
-      } else {
-        this.toastr.error("StoryName:" + sessionStorage.getItem('storyName')!, "Story Already Exists",)
-        sessionStorage.removeItem("storyName")
-        }   
       
     }
   }

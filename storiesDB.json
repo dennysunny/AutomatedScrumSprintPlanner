@@ -37,10 +37,43 @@
       "id": 16
     },
     {
-      "storyName": "As a designer, I want to create an eye-catching user interface for the dynamic calendar component, ensuring it is visually appealing and user-friendly",
+      "storyName": "As a QA tester, I want to thoroughly test the dynamic calendar component, ensuring it works flawlessly across different devices and browsers.",
       "storyPoint": 8,
-      "color": "#bbec95",
+      "color": "#a8c464",
+      "id": 1
+    },
+    {
+      "storyName": "As a project manager, I want to prioritize the implementation of the dynamic calendar component, ensuring it is delivered on time and aligns with the overall project goals.",
+      "storyPoint": 5,
+      "color": "#ff6b6b",
+      "id": 23
+    },
+    {
+      "storyName": "As a marketing specialist, I want to create promotional materials and campaigns to highlight the new dynamic calendar feature, attracting more trainers and attendees to the platform.",
+      "storyPoint": 6,
+      "color": "#6bd4ff",
+      "id": 31
+    },
+    {
+      "storyName": "As a product manager, I want to gather feedback from trainers and attendees regarding the dynamic calendar component, in order to identify potential improvements and enhancements.",
+      "storyPoint": 3,
+      "color": "#ff3366",
+      "id": 37
+    },
+    {
+      "storyName": "As a tester, I want to conduct thorough testing and ensure all features of the dynamic calendar component work as expected across different devices and browsers.",
+      "storyPoint": 4,
+      "color": "#f57c00",
+      "id": 25
+    },
+    {
+      "storyName": "As a developer, I want to implement a search functionality within the dynamic calendar component, so that trainers and attendees can easily find specific classes based on keywords.",
+      "storyPoint": 8,
+      "color": "#a8c86d",
       "id": 17
     }
+
+
+
   ]
 }

@@ -13,6 +13,8 @@ export class SprintCalculatorComponent implements OnInit {
   sprintCalculatorForm! :FormGroup;
   storyList! :any;
   generatedStoryList! :any;
+  sprintPoint! :any;
+
   @Output() sprintPointEmitter = new EventEmitter<Number>();
   @Output() deleteStoryNotifyEvent = new EventEmitter<any>();
  
@@ -31,22 +33,26 @@ export class SprintCalculatorComponent implements OnInit {
 
   loadStories(){
     if(this.sprintCalculatorForm.valid){
-      let sprintPoint = Number(this.sprintCalculatorForm.value.sprintPoint)   
-      this.sprintPointEmitter.emit(sprintPoint)
+      this.sprintPoint = Number(this.sprintCalculatorForm.value.sprintPoint)   
+      this.sprintPointEmitter.emit(this.sprintPoint)
     }
   }
 
   
 
   clearAllCreatedStories(){
-
+    let toastShown = false;
     this.storyList = this.storyService.storyList;
 
     if(this.storyList){
       this.storyList.forEach((story: any) => {
         this.storyService.removeAllStories(story.id).subscribe({
           next: (res) => {
-            this.toastr.error("Story Deleted", res.storyName),
+            if(!toastShown){
+              this.toastr.success("All Stories Deleted");
+              toastShown=true
+            }
+            this.toastr.success("Story Deleted", res.storyName),
             this.deleteStoryNotifyEvent.emit(res);
           },
           error: (err) => this.toastr.warning("Error",err)
@@ -55,22 +61,27 @@ export class SprintCalculatorComponent implements OnInit {
     }
   }
 
-  clearAllSelectedStories(){
-
+  clearAllSelectedStories() {
+    let toastShown = false;
     this.generatedStoryList = this.storyService.generatedStoriesList;
 
     if (this.generatedStoryList) {
       this.generatedStoryList.forEach((story: any) => {
         this.storyService.removeAllStories(story.id).subscribe({
           next: (res) => {
-            this.toastr.error("Story Deleted", res.storyName)
-            this.deleteStoryNotifyEvent.emit(res)
-        },
-          error: (err) => this.toastr.warning("Error", err)
-        })
-      })
-    }
-
-  }
+            if (!toastShown) {
+              this.toastr.success('Stories Deleted', res.storyName);
+              toastShown = true;
+            }
+            this.deleteStoryNotifyEvent.emit(res);
+            this.sprintCalculatorForm.controls['sprintPoint'].patchValue('');
+            this.sprintCalculatorForm.controls['sprintPoint'].setErrors(null);
+            this.sprintPoint = 0;
+            this.sprintPointEmitter.emit(this.sprintPoint);
+          },
+          error: (err) => this.toastr.warning('Error', err),
+        });
+      });
+    }}
 
 }

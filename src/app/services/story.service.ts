@@ -1,35 +1,45 @@
-import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import {
+  HttpClient,
+  HttpErrorResponse,
+  HttpHeaders,
+} from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, catchError, map, tap, throwError } from 'rxjs';
-
-
+import {
+  BehaviorSubject,
+  Observable,
+  catchError,
+  map,
+  tap,
+  throwError,
+} from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class StoryService {
-
   storyList!: any;
-  generatedStoriesList! :any;
+  generatedStoriesList!: any;
 
   constructor(private http: HttpClient) {}
 
   getAllStories(): Observable<any> {
     return this.http.get('/stories').pipe(
-      tap((res) => this.storyList = res
-      ),catchError(this.handleError)
+      tap((res) => (this.storyList = res)),
+      catchError(this.handleError)
     );
   }
 
   //For duplicate story name check
-  checkDuplicateStories(storyName :string) :Observable<any> {
+  checkDuplicateStories(storyName: string): Observable<any> {
     return this.getAllStories().pipe(
       map((stories) => {
-        const duplicateStoryNames = stories.find((story :any) => story.storyName === storyName)
+        const duplicateStoryNames = stories.find(
+          (story: any) => story.storyName === storyName
+        );
         return duplicateStoryNames;
       })
-    )
-    }
+    );
+  }
 
   addStory(story: any): Observable<any> {
     const options = new HttpHeaders({ 'Content-Type': 'application/json' });
@@ -44,7 +54,9 @@ export class StoryService {
     return this.getAllStories().pipe(
       map((stories) => {
         //filterout all the user stories point, which are greater than of the sprint limit
-        const storyList = stories.filter((story: any) => story.storyPoint <= sprintPoint );
+        const storyList = stories.filter(
+          (story: any) => story.storyPoint <= sprintPoint
+        );
 
         let totalStoryPointCount = 0;
         let currentTotalCount = 0;
@@ -54,11 +66,14 @@ export class StoryService {
 
         //generating userstories within the given sprint limit
         storyList.forEach((story: any) => {
-          if (story.storyPoint <= storySprintCount && totalStoryPointCount < storySprintCount) {
-            currentTotalCount = totalStoryPointCount + story.storyPoint
-            if(currentTotalCount<= storySprintCount){
+          if (
+            story.storyPoint <= storySprintCount &&
+            totalStoryPointCount < storySprintCount
+          ) {
+            currentTotalCount = totalStoryPointCount + story.storyPoint;
+            if (currentTotalCount <= storySprintCount) {
               generatedStories.push(story);
-              totalStoryPointCount += story.storyPoint
+              totalStoryPointCount += story.storyPoint;
             }
           }
         });
@@ -69,21 +84,15 @@ export class StoryService {
     );
   }
 
-  removeAllStories(id :any): Observable<any> {
-   
-      return this.http.delete(`/stories/${id}`).pipe(
-        tap((res) => console.log('Deleted Stories', JSON.stringify(res))),
-        catchError(this.handleError)
-      );
+  removeAllStories(id: any): Observable<any> {
+    return this.http.delete(`/stories/${id}`).pipe(
+      tap((res) => console.log('Deleted Stories', JSON.stringify(res))),
+      catchError(this.handleError)
+    );
   }
 
-  
-
-  private _updateAddedStories = new BehaviorSubject<boolean>(true);
-  public updateGetCall = this._updateAddedStories.asObservable();
-
   private handleError(err: HttpErrorResponse): Observable<any> {
-    let errMsg :any;
+    let errMsg: any;
 
     if (err.error instanceof Error) {
       // A client-side or network error occurred. Handle it accordingly.
@@ -95,7 +104,7 @@ export class StoryService {
       The response body may contain clues as to what went wrong, 
       */
       console.log(`Backend returned code ${err.status}`);
-      errMsg = err.status.toString()
+      errMsg = err.status.toString();
     }
     return throwError(() => errMsg);
   }
