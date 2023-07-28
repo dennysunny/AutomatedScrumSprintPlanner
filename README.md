@@ -1,27 +1,46 @@
 # AutomatedScrumSprintPlanner
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
+Used JSON Server as Database, Angular Material UI for styles
 
-## Development server
+## Running the Project
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Run `ng serve --open`, Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Run `run json server: json-server --watch storiesDB.json` to start the JSON server
 
-## Code scaffolding
+## Screenshots
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Screenshots:
 
-## Build
+Home Page (With no user stories)
+![image](https://github.com/dennysunny/AutomatedScrumSprintPlanner/assets/47289908/03b14ca4-552f-4cdb-9f5f-0abd77f3776e)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Home Page (With user story added and Toast Message)
+![image](https://github.com/dennysunny/AutomatedScrumSprintPlanner/assets/47289908/d72c618b-c0a4-4ee0-b07f-56464bb2e18f)
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+Home Page (With existing user stories)
+![image](https://github.com/dennysunny/AutomatedScrumSprintPlanner/assets/47289908/a4068bd6-fdf5-43a3-8f20-beb43e8c9a82)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Sprint Calculator Page(Before clicking on autogenerate)
+![image](https://github.com/dennysunny/AutomatedScrumSprintPlanner/assets/47289908/8e3cb2e2-aecc-410c-ab8f-905ba65def86)
+
+
+
+
+Sprint Calculator Page(After clicking on autogenerate) (input: 16)
+![image](https://github.com/dennysunny/AutomatedScrumSprintPlanner/assets/47289908/43abc50c-a0ee-44db-a781-2dc17172a65a)
+
+
+Sprint Calculator Page(After clicking on autogenerate) (input: 16) and Deleting selected stories;
+![image](https://github.com/dennysunny/AutomatedScrumSprintPlanner/assets/47289908/fd08eec2-80a1-4560-91f5-9c0cf6a0f144)
+
+
+print Calculator Page (After clicking on the Delete All Stories button)
+![image](https://github.com/dennysunny/AutomatedScrumSprintPlanner/assets/47289908/74c2cc32-7b14-4b8c-b79c-454e719cbd57)
+
+
+
