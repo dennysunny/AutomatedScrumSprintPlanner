@@ -1,4 +1,4 @@
-import { Component, DoCheck, Input, OnInit } from '@angular/core';
+import { Component, DoCheck, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { StoryService } from 'src/app/services/story.service';
 
 @Component({
@@ -6,17 +6,14 @@ import { StoryService } from 'src/app/services/story.service';
   templateUrl: './story-list.component.html',
   styleUrls: ['./story-list.component.css']
 })
-export class StoryListComponent{
+export class StoryListComponent {
 
   defaultColor = "#ebebeb"
   emptyStories! :string;
 
-  constructor(
-    private storyService :StoryService
-  ){}
+  constructor(){}
 
   @Input() stories! :any;
-
   
 
 }

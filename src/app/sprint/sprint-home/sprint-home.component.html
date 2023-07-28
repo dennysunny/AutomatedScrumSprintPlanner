@@ -3,7 +3,9 @@
 
         <div class="col-9">
             
-            <app-auto-generate-sprint [sprintPoint] = "sprintPoint" ></app-auto-generate-sprint>
+            <app-auto-generate-sprint 
+            [sprintPoint] = "sprintPoint" 
+            ></app-auto-generate-sprint>
         </div>
         <div class="col col-lg-3">
             <app-sprint-calculator  (sprintPointEmitter) = "getSprintPoint($event)" ></app-sprint-calculator>

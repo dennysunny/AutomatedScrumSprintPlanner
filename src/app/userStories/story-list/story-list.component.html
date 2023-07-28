@@ -1,12 +1,21 @@
 
-<mat-grid-list cols="8" rowHeight="4:6" *ngIf="stories?.length>0; else emptyStoryScreen" >
-    <mat-grid-tile 
-    layout-padding
-    *ngFor="let story of stories"
-    [colspan]="story.storyPoint>4 ? 4 : story.storyPoint" 
-    [style.background] = "story.color? story.color : defaultColor">Story: {{story.storyName}} <br>  Point: {{story.storyPoint}} 
-</mat-grid-tile>
-</mat-grid-list>
+<div >
+    <mat-grid-list cols="12" rowHeight="3:7" role="list" *ngIf="stories?.length>0; else emptyStoryScreen">
+        <p class="storyHeading">Total User Stories : {{stories.length}}</p>
+        <div class="grid">
+            <mat-grid-tile class="margin" role="listitem" 
+            *ngFor="let story of stories" 
+            [colspan]="story.storyPoint>8 ? 10 : 5"
+            [rowspan]="story.storyName.length>120 ? 2 : 1"
+            [style.background]="story.color? story.color : defaultColor">
+                
+                <div class="storyName" >Story: <br> {{story.storyName}}</div>
+                <mat-grid-tile-footer>Story Point: {{story.storyPoint}}</mat-grid-tile-footer>
+                
+            </mat-grid-tile>
+        </div>
+    </mat-grid-list>
+</div>
 
 <ng-template #emptyStoryScreen >
     

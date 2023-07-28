@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { StoryService } from 'src/app/services/story.service';
 import { ToastrService } from 'ngx-toastr'
@@ -12,7 +12,9 @@ export class SprintCalculatorComponent implements OnInit {
 
   sprintCalculatorForm! :FormGroup;
   storyList! :any;
+  generatedStoryList! :any;
   @Output() sprintPointEmitter = new EventEmitter<Number>();
+ 
 
   constructor(
     private formBuilder : FormBuilder,
@@ -42,7 +44,7 @@ export class SprintCalculatorComponent implements OnInit {
     if(this.storyList){
       this.storyList.forEach((story: any) => {
         this.storyService.removeAllStories(story.id).subscribe({
-          next: (res) => this.toastr.warning("All Stories Deleted", res),
+          next: (res) => this.toastr.error("Story Deleted", res.storyName),
           error: (err) => this.toastr.warning("Error",err)
         })
       })
@@ -50,6 +52,17 @@ export class SprintCalculatorComponent implements OnInit {
   }
 
   clearAllSelectedStories(){
+
+    this.generatedStoryList = this.storyService.generatedStoriesList;
+
+    if (this.generatedStoryList) {
+      this.generatedStoryList.forEach((story: any) => {
+        this.storyService.removeAllStories(story.id).subscribe({
+          next: (res) => this.toastr.error("Story Deleted", res.storyName),
+          error: (err) => this.toastr.warning("Error", err)
+        })
+      })
+    }
 
   }
 

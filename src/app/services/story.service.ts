@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, catchError, map, tap, throwError } from 'rxjs';
+import { BehaviorSubject, Observable, catchError, map, tap, throwError } from 'rxjs';
 
 
 
@@ -10,6 +10,7 @@ import { Observable, catchError, map, tap, throwError } from 'rxjs';
 export class StoryService {
 
   storyList!: any;
+  generatedStoriesList! :any;
 
   constructor(private http: HttpClient) {}
 
@@ -61,6 +62,7 @@ export class StoryService {
             }
           }
         });
+        this.generatedStoriesList = generatedStories;
         return generatedStories;
       }),
       catchError(this.handleError)
@@ -73,9 +75,12 @@ export class StoryService {
         tap((res) => console.log('Deleted Stories', JSON.stringify(res))),
         catchError(this.handleError)
       );
-    
-    
   }
+
+  
+
+  private _updateAddedStories = new BehaviorSubject<boolean>(true);
+  public updateGetCall = this._updateAddedStories.asObservable();
 
   private handleError(err: HttpErrorResponse): Observable<any> {
     let errMsg :any;

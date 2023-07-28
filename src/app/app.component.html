@@ -1,13 +1,16 @@
 
-<mat-sidenav-container>
-  <mat-sidenav #sidenav>
 
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <p>Automated Scrum Sprint Planner</p>
 
-      <router-outlet></router-outlet>
-    
-  </mat-sidenav-content>
-</mat-sidenav-container>
+<p>
+  <mat-toolbar>
+    <span routerLink="/add-story" >Automated Scrum Sprint Planner</span>
+    <span class="spacer"></span>
+    <span  [hidden]="!linkVisibility" routerLink="/sprint-calculator">Sprint Calculator</span>
+    <span [hidden]="linkVisibility" routerLink="/add-story">Add User Story</span>
+
+  </mat-toolbar>
+</p>
+
+
 <router-outlet></router-outlet>
+    

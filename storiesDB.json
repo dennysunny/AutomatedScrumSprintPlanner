@@ -1,196 +1,22 @@
 {
   "stories": [
     {
-      "storyName": "sssd",
-      "storyPoint": 1,
-      "color": "#6e0081",
+      "storyName": "ddwjbdiw",
+      "storyPoint": 55,
+      "color": "#f082d1",
       "id": 1
     },
     {
-      "storyName": "sssd",
-      "storyPoint": 5,
-      "color": "#3d5281",
+      "storyName": "wdwhj dwkh",
+      "storyPoint": 51,
+      "color": "#89978e",
       "id": 2
     },
     {
-      "storyName": "test story",
-      "storyPoint": 6,
-      "color": "#9d0281",
+      "storyName": "wdwhj dwkh",
+      "storyPoint": 51,
+      "color": "#8e9d05",
       "id": 3
-    },
-    {
-      "storyName": "user stoet",
-      "storyPoint": 2,
-      "color": "#e982f9",
-      "id": 4
-    },
-    {
-      "storyName": "user stoet",
-      "storyPoint": 2,
-      "color": "#b51ca2",
-      "id": 5
-    },
-    {
-      "storyName": "another user siry",
-      "storyPoint": 3,
-      "color": "#5d2ee1",
-      "id": 6
-    },
-    {
-      "storyName": "another user siry",
-      "storyPoint": 3,
-      "color": "#f5d6b1",
-      "id": 7
-    },
-    {
-      "storyName": "another one",
-      "storyPoint": 1,
-      "color": "#c729cf",
-      "id": 8
-    },
-    {
-      "storyName": "another onss",
-      "storyPoint": 5,
-      "color": "#2698ef",
-      "id": 9
-    },
-    {
-      "storyName": "test story",
-      "storyPoint": 3,
-      "color": "#bb1738",
-      "id": 10
-    },
-    {
-      "storyName": "abc story",
-      "storyPoint": 8,
-      "color": "#c8ec1d",
-      "id": 11
-    },
-    {
-      "storyName": "abc story",
-      "storyPoint": 8,
-      "color": "#f7cd34",
-      "id": 12
-    },
-    {
-      "storyName": "def story",
-      "storyPoint": 5,
-      "color": "#b32243",
-      "id": 13
-    },
-    {
-      "storyName": "fre story",
-      "storyPoint": 4,
-      "color": "#8672fa",
-      "id": 14
-    },
-    {
-      "storyName": "sssd",
-      "storyPoint": 1,
-      "color": "#d8e0f9",
-      "id": 15
-    },
-    {
-      "storyName": "sssd",
-      "storyPoint": 2,
-      "color": "#ec250d",
-      "id": 16
-    },
-    {
-      "storyName": "sssd",
-      "storyPoint": 1,
-      "color": "#3d4c00",
-      "id": 17
-    },
-    {
-      "storyName": "sssd",
-      "storyPoint": 1,
-      "color": "#cad625",
-      "id": 18
-    },
-    {
-      "storyName": "sssd",
-      "storyPoint": 1,
-      "color": "#2dcdbd",
-      "id": 19
-    },
-    {
-      "storyName": "sssd",
-      "storyPoint": 11,
-      "color": "#53e263",
-      "id": 20
-    },
-    {
-      "storyName": "sssd",
-      "storyPoint": 1,
-      "color": "#67a4ae",
-      "id": 21
-    },
-    {
-      "storyName": "sssd",
-      "storyPoint": 1,
-      "color": "#c7da56",
-      "id": 22
-    },
-    {
-      "storyName": "sssd",
-      "storyPoint": 1,
-      "color": "#63d830",
-      "id": 23
-    },
-    {
-      "storyName": "sssd",
-      "storyPoint": 1,
-      "color": "#d6159b",
-      "id": 24
-    },
-    {
-      "storyName": "sssd",
-      "storyPoint": 1,
-      "color": "#e6138c",
-      "id": 25
-    },
-    {
-      "storyName": "sssd",
-      "storyPoint": 1,
-      "color": "#1049d0",
-      "id": 26
-    },
-    {
-      "storyName": "sssd",
-      "storyPoint": 1,
-      "color": "#c4e3a5",
-      "id": 27
-    },
-    {
-      "storyName": "sssd",
-      "storyPoint": 1,
-      "color": "#41861f",
-      "id": 28
-    },
-    {
-      "storyName": "free",
-      "storyPoint": 1,
-      "color": "#500f68",
-      "id": 29
-    },
-    {
-      "storyName": "free",
-      "storyPoint": 1,
-      "color": "#6a96ac",
-      "id": 30
-    },
-    {
-      "storyName": "sssd",
-      "storyPoint": 1,
-      "color": "#854202",
-      "id": 31
-    },
-    {
-      "storyName": "sssd",
-      "storyPoint": 1,
-      "color": "#17b66e",
-      "id": 32
     }
   ]
 }
