@@ -14,6 +14,7 @@ export class SprintCalculatorComponent implements OnInit {
   storyList! :any;
   generatedStoryList! :any;
   @Output() sprintPointEmitter = new EventEmitter<Number>();
+  @Output() deleteStoryNotifyEvent = new EventEmitter<any>();
  
 
   constructor(
@@ -44,7 +45,10 @@ export class SprintCalculatorComponent implements OnInit {
     if(this.storyList){
       this.storyList.forEach((story: any) => {
         this.storyService.removeAllStories(story.id).subscribe({
-          next: (res) => this.toastr.error("Story Deleted", res.storyName),
+          next: (res) => {
+            this.toastr.error("Story Deleted", res.storyName),
+            this.deleteStoryNotifyEvent.emit(res);
+          },
           error: (err) => this.toastr.warning("Error",err)
         })
       })
@@ -58,7 +62,10 @@ export class SprintCalculatorComponent implements OnInit {
     if (this.generatedStoryList) {
       this.generatedStoryList.forEach((story: any) => {
         this.storyService.removeAllStories(story.id).subscribe({
-          next: (res) => this.toastr.error("Story Deleted", res.storyName),
+          next: (res) => {
+            this.toastr.error("Story Deleted", res.storyName)
+            this.deleteStoryNotifyEvent.emit(res)
+        },
           error: (err) => this.toastr.warning("Error", err)
         })
       })

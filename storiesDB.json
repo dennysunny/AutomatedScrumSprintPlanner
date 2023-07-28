@@ -1,22 +1,46 @@
 {
   "stories": [
     {
-      "storyName": "ddwjbdiw",
-      "storyPoint": 55,
-      "color": "#f082d1",
-      "id": 1
+      "storyName": "As a developer, I want to integrate automated testing into my workflow to ensure code reliability.",
+      "storyPoint": 8,
+      "color": "#f982e9",
+      "id": 11
     },
     {
-      "storyName": "wdwhj dwkh",
-      "storyPoint": 51,
-      "color": "#89978e",
-      "id": 2
+      "storyName": "As a project manager, I want a task prioritization feature to manage team workloads effectively.",
+      "storyPoint": 5,
+      "color": "#f98282",
+      "id": 13
     },
     {
-      "storyName": "wdwhj dwkh",
-      "storyPoint": 51,
-      "color": "#8e9d05",
-      "id": 3
+      "storyName": "As a user, I want to receive email notifications for important updates and announcements.",
+      "storyPoint": 2,
+      "color": "#82f9e9",
+      "id": 14
+    },
+    {
+      "storyName": "As a developer, I want to create a dynamic calendar component that displays upcoming classes and links to detailed pages for each class, so that trainers can easily manage and showcase their courses.",
+      "storyPoint": 5,
+      "color": "#64b5f6",
+      "id": 12
+    },
+    {
+      "storyName": "As a project manager, I want to conduct a thorough code review for the dynamic calendar component to ensure its quality and adherence to coding standards before deployment",
+      "storyPoint": 10,
+      "color": "#acced0",
+      "id": 15
+    },
+    {
+      "storyName": "As a designer, I want to create an eye-catching user interface for the dynamic calendar component, ensuring it is visually appealing and user-friendly",
+      "storyPoint": 6,
+      "color": "#c3f959",
+      "id": 16
+    },
+    {
+      "storyName": "As a designer, I want to create an eye-catching user interface for the dynamic calendar component, ensuring it is visually appealing and user-friendly",
+      "storyPoint": 8,
+      "color": "#bbec95",
+      "id": 17
     }
   ]
 }

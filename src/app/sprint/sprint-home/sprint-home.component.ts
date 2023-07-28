@@ -10,6 +10,7 @@ import { ToastrService } from 'ngx-toastr'
 export class SprintHomeComponent {
 
   sprintPoint!: any
+  deletedStories! :any
    
 
   constructor(
@@ -19,6 +20,11 @@ export class SprintHomeComponent {
 
   getSprintPoint(sprintPoint: Number) {
     this.sprintPoint = sprintPoint
+  }
+
+  getSprintDeletedStories(deletedStories :any){
+    this.deletedStories = deletedStories;
+
   }
 
 
