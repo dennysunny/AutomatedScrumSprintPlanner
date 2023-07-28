@@ -167,6 +167,30 @@
       "storyPoint": 1,
       "color": "#41861f",
       "id": 28
+    },
+    {
+      "storyName": "free",
+      "storyPoint": 1,
+      "color": "#500f68",
+      "id": 29
+    },
+    {
+      "storyName": "free",
+      "storyPoint": 1,
+      "color": "#6a96ac",
+      "id": 30
+    },
+    {
+      "storyName": "sssd",
+      "storyPoint": 1,
+      "color": "#854202",
+      "id": 31
+    },
+    {
+      "storyName": "sssd",
+      "storyPoint": 1,
+      "color": "#17b66e",
+      "id": 32
     }
   ]
 }

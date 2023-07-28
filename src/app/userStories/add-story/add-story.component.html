@@ -11,11 +11,11 @@
                             <mat-label>Story Name</mat-label>
                             <input matInput formControlName="storyName">
                             <div *ngIf=" addStoryForm.controls['storyName'].touched  && addStoryForm.get('storyName')?.errors" class="alert alert-danger">
-                                <p>Entered Story Name length : 
-                                    {{this.addStoryForm.controls['storyName'].errors?.['minlength']?.actualLength?
-                                    this.addStoryForm.controls['storyName'].errors?.['minlength']?.actualLength : 0}} Characters</p>
-                                <p>Story Name should have Minimum
-                                    {{this.addStoryForm.controls['storyName'].errors?.['minlength']?.requiredLength}} Characters</p>
+                                <p *ngIf="addStoryForm.controls['storyName'].errors?.['minlength']?.requiredLength" >Story Name should have Minimum
+                                    {{addStoryForm.controls['storyName'].errors?.['minlength']?.requiredLength}} Characters</p>
+                                <p *ngIf="addStoryForm.controls['storyName'].errors" >
+
+                                </p>
                             </div>
                         </mat-form-field >
 

@@ -23,26 +23,38 @@ export class AddStoryComponent implements OnInit{
 
     ngOnInit(): void {
         this.addStoryForm = this.formBuilder.group({
-          storyName : ['', {updateOn : 'change', validators : [Validators.required, Validators.minLength(4) ]}],
+          storyName : ['', {updateOn : 'change', validators : [Validators.required, Validators.minLength(4), this.checkDuplictateStory ]}],
           storyPoint : ['', {updateOn : 'change', validators : [Validators.required, Validators.minLength(1), Validators.maxLength(2)]}]
         })
     }
 
+    checkDuplictateStory(storyName :FormControl){
+      return storyName ? null : {
+       StoryAlreadyAdded : {
+        "error" : "Entered Story is Alredy Added to the Database,Please add another story"
+       } 
+      }
+      
+      
+    }
+
 
   addStory() {
-
+    
     if(this.addStoryForm.valid){
 
       this.storyService.checkDuplicateStories(this.addStoryForm.value.storyName).subscribe({
-        next: (res) => {this.isStoryExists = res
-        console.log("resss",this.isStoryExists);
+        next: (res) => {
+          if(res.storyName != '' || res.storyName !== null){
+            sessionStorage.setItem('storyName', res.storyName)
+          }
         },
         error: (err) => this.toastr.warning("Error", err)
 
       })
-
-      if(!this.isStoryExists){
-        console.log("story exisists",this.isStoryExists);
+      //add story to db, only if isStoryExists is null
+      if(sessionStorage.getItem('storyName')){
+        console.log("story exisists", sessionStorage.getItem('storyName'));
         
         this.storyService.addStory(this.addStoryForm.value).subscribe({
           next: (res) => console.log("Component", res),
