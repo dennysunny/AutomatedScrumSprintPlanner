@@ -1,10 +1,7 @@
 import {
   Component,
-  EventEmitter,
   Input,
   OnChanges,
-  Output,
-  SimpleChanges,
 } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { StoryService } from 'src/app/services/story.service';

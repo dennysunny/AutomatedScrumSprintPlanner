@@ -1,10 +1,6 @@
 import {
   Component,
-  DoCheck,
   Input,
-  OnChanges,
-  OnInit,
-  SimpleChanges,
 } from '@angular/core';
 import { StoryService } from 'src/app/services/story.service';
 

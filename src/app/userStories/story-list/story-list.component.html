@@ -1,15 +1,12 @@
-<div style="overflow-y: scroll; height: 70%">
+
   <mat-grid-list
     cols="12"
     rowHeight="3:7"
-    role="list"
     *ngIf="stories?.length > 0; else emptyStoryScreen"
   >
     <p class="storyHeading">Total User Stories : {{ stories.length }}</p>
     <div class="grid">
       <mat-grid-tile
-        class="margin"
-        role="listitem"
         *ngFor="let story of stories"
         [colspan]="story.storyPoint > 8 ? 10 : 5"
         [rowspan]="story.storyName.length > 120 ? 2 : 2"
@@ -25,12 +22,16 @@
       </mat-grid-tile>
     </div>
   </mat-grid-list>
-</div>
+
 
 <ng-template #emptyStoryScreen>
   <mat-grid-list cols="1" rowHeight="100%">
     <mat-grid-tile layout-padding [colspan]="1" [style.background]="'#fa8072 '">
-      <p>No Stories Created/Left</p>
+    <div class="storyName">
+        <mat-grid-tile-header> No Stories Available</mat-grid-tile-header>
+        <mat-grid-tile-footer> Create Stories by adding Story Name and Story point in Add User Story Form in the left</mat-grid-tile-footer>
+
+    </div>
     </mat-grid-tile>
   </mat-grid-list>
 </ng-template>

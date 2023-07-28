@@ -58,7 +58,7 @@ export class SprintCalculatorComponent implements OnInit {
               this.toastr.success('All Stories Deleted');
               toastShown = true;
             }
-            this.toastr.success('Story Deleted', res.storyName),
+            
               this.deleteStoryNotifyEvent.emit(res);
           },
           error: (err) => this.toastr.warning('Error', err),
